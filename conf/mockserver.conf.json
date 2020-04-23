@@ -1,0 +1,7 @@
+{
+  "http_addr": "0.0.0.0",
+  "http_port": 8892,
+  "api_server_url": "",
+  "api_code": "",
+  "api_secret": ""
+}
