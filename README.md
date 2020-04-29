@@ -41,7 +41,7 @@ Callback URL
 http://localhost:8892/v1/mock/callback
 ```
 
-## How to compile
+### How to compile
 - Execute
 	- npm install
 	- npm start
@@ -49,12 +49,12 @@ http://localhost:8892/v1/mock/callback
 > Required version: node v10.19.0 or later (npm v6.13.4 or later)
 
 <a name="curl-testing-commands"></a>
-## CURL Testing Commands
+# CURL Testing Commands
 
 Refer to [here](https://github.com/CYBAVO/AUTH_MOCK_SERVER#curl-testing-commands) for curl testing commands.
 
 <a name="other-language-versions"></a>
-## Other Language Versions
+# Other Language Versions
 - [GO](https://github.com/CYBAVO/AUTH_MOCK_SERVER)
 - [PHP](https://github.com/CYBAVO/AUTH_MOCK_SERVER_PHP)
 

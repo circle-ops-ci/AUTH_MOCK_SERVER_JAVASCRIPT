@@ -150,6 +150,26 @@ router.get('/users/totpverify', async function(req, res) {
   }
 });
 
+router.post('/users/info/email', async function(req, res) {
+  const apires = await api.makeRequest("POST", '/v1/api/users/info/email',
+    getQueryParams(req.query), JSON.stringify(req.body));
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
+router.get('/users/info/verify', async function(req, res) {
+  const apires = await api.makeRequest("GET", '/v1/api/users/info/verify',
+    getQueryParams(req.query), null);
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
 router.post('/callback', function(req, res) {
   console.log('callback ->', req.body);
 
