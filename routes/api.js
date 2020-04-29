@@ -120,6 +120,16 @@ router.post('/users/emailotp', async function(req, res) {
   }
 });
 
+router.get('/users/emailotp/verify', async function(req, res) {
+  const apires = await api.makeRequest("GET", '/v1/api/users/emailotp/verify',
+    getQueryParams(req.query), null);
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
 router.get('/users/totpverify', async function(req, res) {
   const apires = await api.makeRequest("GET", '/v1/api/users/totpverify',
     getQueryParams(req.query), null);
