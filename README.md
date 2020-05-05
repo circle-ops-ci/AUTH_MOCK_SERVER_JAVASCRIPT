@@ -11,8 +11,7 @@
 <a name="get-started"></a>
 # Get Started
 
-- Get API code and API secret on web admin console
-- Refer to [mock server](#mock-server) sample code 
+- Refer to [mock server](#mock-server) to integrate CYBAVO AuthSec API.
 
 <a name="auth-api"></a>
 # AUTH API
@@ -33,13 +32,15 @@ Refer to [here](https://github.com/CYBAVO/AUTH_MOCK_SERVER#register-new-user) fo
 ```
 
 ## Register mock server URL
->	Operate on web admin console
+>	Set notification callback URL on web admin console
 
-Callback URL
+Mock server callback URL
 
 ```
 http://localhost:8892/v1/mock/callback
 ```
+
+> To ensure that the service provider has processed the notification callback, the CYBAVO AuthSec API server will continue to send notification callbacks to the service provider until a callback confirmation (HTTP/1.1 200 OK) is received.
 
 ### How to compile
 - Execute

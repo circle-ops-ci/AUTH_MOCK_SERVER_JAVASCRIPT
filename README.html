@@ -349,8 +349,7 @@ kbd {
 <h1 id="toc_1">Get Started</h1>
 
 <ul>
-<li>Get API code and API secret on web admin console</li>
-<li>Refer to <a href="#mock-server">mock server</a> sample code </li>
+<li>Refer to <a href="#mock-server">mock server</a> to integrate CYBAVO AuthSec API.</li>
 </ul>
 
 <p><a name="auth-api"></a></p>
@@ -380,14 +379,18 @@ kbd {
 <h2 id="toc_5">Register mock server URL</h2>
 
 <blockquote>
-<p>Operate on web admin console</p>
+<p>Set notification callback URL on web admin console</p>
 </blockquote>
 
-<p>Callback URL</p>
+<p>Mock server callback URL</p>
 
 <div><pre><code class="language-none">http://localhost:8892/v1/mock/callback</code></pre></div>
 
-<h2 id="toc_6">How to compile</h2>
+<blockquote>
+<p>To ensure that the service provider has processed the notification callback, the CYBAVO AuthSec API server will continue to send notification callbacks to the service provider until a callback confirmation (HTTP/1.1 200 OK) is received.</p>
+</blockquote>
+
+<h3 id="toc_6">How to compile</h3>
 
 <ul>
 <li>Execute
@@ -404,13 +407,13 @@ kbd {
 
 <p><a name="curl-testing-commands"></a></p>
 
-<h2 id="toc_7">CURL Testing Commands</h2>
+<h1 id="toc_7">CURL Testing Commands</h1>
 
 <p>Refer to <a href="https://github.com/CYBAVO/AUTH_MOCK_SERVER#curl-testing-commands">here</a> for curl testing commands.</p>
 
 <p><a name="other-language-versions"></a></p>
 
-<h2 id="toc_8">Other Language Versions</h2>
+<h1 id="toc_8">Other Language Versions</h1>
 
 <ul>
 <li><a href="https://github.com/CYBAVO/AUTH_MOCK_SERVER">GO</a></li>
