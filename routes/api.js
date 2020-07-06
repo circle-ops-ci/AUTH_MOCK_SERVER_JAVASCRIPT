@@ -170,6 +170,35 @@ router.get('/users/info/verify', async function(req, res) {
   }
 });
 
+router.post('/users/edit', async function(req, res) {
+  const apires = await api.makeRequest("POST", '/v1/api/users/edit',
+    getQueryParams(req.query), JSON.stringify(req.body));
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
+router.delete('/users/remove', async function(req, res) {
+  const apires = await api.makeRequest("DELETE", `/v1/api/users/remove`,
+    getQueryParams(req.query), null);
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
+router.get('/healthy', async function(req, res) {
+  const apires = await api.makeRequest("GET", '/v1/api/healthy', null, null);
+  if (apires.statusCode) {
+    res.status(apires.statusCode).json(apires.result);
+  } else {
+    res.status(400).json(apires);
+  }
+});
+
 router.post('/callback', function(req, res) {
   console.log('callback ->', req.body);
 

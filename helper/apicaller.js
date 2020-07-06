@@ -67,7 +67,7 @@ module.exports.makeRequest = async function (method, api, params, postData) {
   const r = rs.randomString(8);
   const t = Math.floor(Date.now()/1000);
   let url = `${cfg.api_server_url}${api}?t=${t}&r=${r}`;
-  if (!!params) {
+  if (!!params && params.length) {
     url += `&${params.join('&')}`;
   }
   const options = {
@@ -79,15 +79,19 @@ module.exports.makeRequest = async function (method, api, params, postData) {
   };
   if (method === 'POST' || method === 'DELETE') {
     options.headers['Content-Type'] = 'application/json';
-    if (!!postData.length) {
+    if (postData && !!postData.length) {
       options.headers['Content-Length'] = postData.length;
     }
   }
 
   try {
     let result = await doRequest(url, options, postData);
-    return tryParseJSON(result);
+    const resp = tryParseJSON(result);
+    console.log('response ->', resp ? JSON.stringify(resp) : '');
+    return resp;
   } catch(error) {
-    return tryParseJSON(error);
+    const resp = tryParseJSON(error);
+    console.log('response ->', resp ? JSON.stringify(resp) : '');
+    return resp;
   }
 }
